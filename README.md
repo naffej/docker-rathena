@@ -1,12 +1,21 @@
 # docker-rathena
 
 ```bash
-docker build -t naffej/rathena .
-docker run -ti -p 3306:3306 -p 6900:6900 -p 5121:5121 -p 6121:6121 naffej/rathena bash
+git -c http.sslVerify=false clone https://github.com/rathena/rathena.git rathena
+docker-compose up -d --build
 ```
 
+Első alkalommal:
+
 ```bash
-/install.sh
-cd /rathena
+docker exec -it ragnarok /bin/bash
+sh /install.sh
+```
+
+Server inditás:
+```
+cd /etc/rathena
 ./athena-start start
 ```
+### Remote SQL ###
+localhost 3306 root/root
