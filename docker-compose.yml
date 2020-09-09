@@ -1,0 +1,16 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+  ragnarok:
+    build: .
+    container_name: ragnarok
+    ports:
+      - "3306:3306"
+      - "6900:6900"
+      - "5121:5121"
+      - "6121:6121"
+    volumes:
+      - ./sqldata:/var/lib/mysql
+      - ./rathena:/etc/rathena
